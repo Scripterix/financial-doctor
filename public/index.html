@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/ownstyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Planer Finansowy Home</title>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-semibold" href="index.html">Planer Finansowy</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./grupy.html">Grupy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./realizacja.html">Realizacja</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./statystyki.html">Statystyki</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./docs.html">Docsy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="currentDate"></a>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control bg-light me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-light" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="my-2 container shadow my-5 py-5 bg-body rounded">
+    <h1 class="display-6 text-center fw-bold">Planer Finansowy</h1>
+    <p class="lead text-center">Planer Finansowy strona główna. Wprowadzanie pojedyńczych zakupów. Data zakupów jest
+      dodawana z dnia dzisiejszego. Zmiany po odświeżeniu. </p>
+  </div>
+
+  <div class="container shadow p-3 my-5 bg-body rounded">
+    <div class="d-flex justify-content-between">
+      <div class="fw-semibold">Miesiąc</div>
+      <div>Maj 2024</div>
+    </div>
+    <div class="d-flex justify-content-between">
+      <div>Aktywa Realizacja</div>
+      <div>779 + 1122 + 1098 + 892 = 3892 </div>
+    </div>
+    <div class="d-flex justify-content-between">
+      <div>Pasywa Plan</div>
+      <div>2000 + 1000 + 200 + 50 + 100 + 400 = 3750</div>
+    </div>
+
+  </div>
+  <!-- This is form for manula add lines of bills -->
+  <div class="container shadow py-5 px-3 my-5 bg-body rounded">
+    <h2 class="display-6 fw-bold fs-5 text-center mt-2 mb-5">Pojedyńcze zakupy na Maj</h2>
+    <div class="form-group row my-4" id="form">
+      <div class="col-md-3">
+        <label for="shopInput">Sklep</label>
+        <input type="text" class="form-control" id="shopInput" aria-describedby="text"
+          placeholder="Wprowadź nazwę Sklepu" autocomplete="on">
+      </div>
+      <div class="col-md-3">
+        <label for="simpleText">Kategoria</label>
+        <input type="text" class="form-control" id="simpleText" aria-describedby="text" placeholder="Wprowadź nazwę"
+          autocomplete="on">
+      </div>
+      <div class="col-md-3">
+        <label for="simpleCost">Wartość</label>
+        <input type="text" class="form-control" id="simpleCost" aria-describedby="text" placeholder="Wprowadź cenę"
+          autocomplete="on">
+      </div>
+      <div class="col-md-3">
+        <div class="btn btn-primary my-4 w-100" value="submit" id="btnSubmit">Submit</div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <div class=" container shadow p-3 my-5 bg-body rounded accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+          aria-expanded="false" aria-controls="collapseOne">
+          Wydatki Maj 2021
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+        data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <div class="" id="showZakupy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <script src="./js/moment.js"></script>
+  <script src="./js/uuid.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <!--<script src="./js/bootstrap.bundle.js"></script>-->
+  <script src="./js/main.js"></script>
+  <script src="./js/cookies.js"></script>
+  <script src="./js/date.js"></script>
+
+</body>
+
+</html>

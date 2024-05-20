@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/ownstyle.css">
+  <title>Planner Finansowy </title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Planer Finansowy</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./grupy.html">Grupy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./realizacja.html">Realizacja</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./statystyki.html">Statystyki</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./docs.html">Docs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="currentDate"></a>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control bg-light me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-light" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="my-2 container shadow my-5 py-5 bg-body rounded">
+    <h1 class="display-6 text-center fw-bold">Planer Finansowy</h1>
+    <p class="lead text-center">Plan Finansowy grupy wydatków, przychodów, planowanie miesięcznych wydatków</p>
+  </div>
+
+  <div class="container shadow p-3 my-5 bg-body rounded">
+    <h2 class="display-6 fw-bold fs-5 text-center mt-2 mb-5">Grupy wydatków na Maj</h2>
+    <form id="form-grupy">
+      <div class="form-group row my-4">
+        <div class="col-md-3">
+          <label for="monthInput">Miesiąc wpisz np 01.05.2024</label>
+          <input type="date" class="form-control" id="monthInput" placeholder="Wprowadź np Maj-2024">
+        </div>
+        <div class="col-md-3">
+          <label for="kategoriaInput">Kategoria</label>
+          <input type="text" class="form-control" id="kategoriaInput" placeholder="Wprowadź Kategorię">
+        </div>
+        <div class="col-md-3">
+          <label for="kwotaInput">Kwota</label>
+          <input type="number" class="form-control" id="kwotaInput" placeholder="Wprowadź Kwotę">
+        </div>
+        <div class="col-md-3">
+          <button type="submit" class="btn btn-primary my-4 w-100" id="btnSubmitGrupy">Submit</button>
+        </div>
+    </form>
+  </div>
+  </div>
+
+
+  <div class="container container shadow my-5 py-5 bg-body rounded" id="displayKategorie">
+    Kategorie
+  </div>
+
+  <div class="container container shadow my-5 py-5 bg-body rounded">
+    <p>Jedzenie, Napoje, Płatności, Piwo, Kot, Ubrania, Obuwie, Dom, Rozrywka, Inwestycje, Oszczędności, Mandaty, Kawa
+    </p>
+  </div>
+
+
+  <script src="./js/grupy.js"></script>
+  <script src="./js/moment.js"></script>
+  <script src="./js/uuid.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/bootstrap.bundle.js"></script>
+  <script src="./js/date.js"></script>
+</body>
+
+</html>

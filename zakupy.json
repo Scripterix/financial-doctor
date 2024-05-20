@@ -1,0 +1,230 @@
+{
+  "zakupy": [
+    {
+      "uuid": "f47ac10b-58cc-4122-b18c-c60f11cd7a3e",
+      "data": "2023-05-11",
+      "sklep": "Żabka",
+      "kategoria": "Jedzenie",
+      "wartość": 20
+    },
+    {
+      "uuid": "8f29c202-18f6-49c8-8a9a-02a5b162559e",
+      "data": "2023-05-15",
+      "sklep": "Biedronka",
+      "kategoria": "Piwo",
+      "wartość": 20
+    },
+    {
+      "uuid": "aa18c209-2b95-4c80-8256-93dcd092ce1f",
+      "data": "2023-05-18",
+      "sklep": "Auchan",
+      "kategoria": "Słodycze Jedzenie",
+      "wartość": 50
+    },
+    {
+      "uuid": "f5a076c6-e981-45c3-9814-365f2d722728",
+      "data": "2024-05-10",
+      "sklep": "Auchan",
+      "kategoria": "Warzywa",
+      "wartość": "20"
+    },
+    {
+      "uuid": "091ce874-5349-4829-bcb8-014240500b23",
+      "data": "2024-05-13",
+      "sklep": "Mini",
+      "kategoria": "Piwo",
+      "wartość": "27"
+    },
+    {
+      "uuid": "7aea99d0-2bfe-4586-9077-905c9c1f1c99",
+      "data": "2024-05-15",
+      "sklep": "Biedronka",
+      "kategoria": "Jedzenie",
+      "wartość": "31.00"
+    },
+    {
+      "uuid": "e79bcc08-9a11-452b-82fb-6b8acaa18db9",
+      "data": "2024-05-15",
+      "sklep": "Żabka",
+      "kategoria": "Jedzenie",
+      "wartość": "8.50"
+    },
+    {
+      "uuid": "b00663ee-4560-4b38-8b19-eb7a02c57819",
+      "data": "2024-05-15",
+      "sklep": "Mini",
+      "kategoria": "Piwo",
+      "wartość": "50.00"
+    },
+    {
+      "uuid": "7d1f4c22-59f1-4b0d-a89e-7e4dafa935b6",
+      "data": "2024-05-15",
+      "sklep": "Żabka",
+      "kategoria": "Piwo",
+      "wartość": "12.00"
+    },
+    {
+      "uuid": "f52e4e1f-ed33-48f8-9125-51285bd905cc",
+      "data": "2024-05-15",
+      "sklep": "Biedronka",
+      "kategoria": "Jedzenie",
+      "wartość": "21.00"
+    },
+    {
+      "uuid": "cf810805-c9a7-4c0f-bc2d-c2c47be3286a",
+      "data": "2024-05-15",
+      "sklep": "Biedronka",
+      "kategoria": "Jedzenie",
+      "wartość": "32"
+    },
+    {
+      "uuid": "694ac2bd-fc94-4400-81b4-0d84ae3a944c",
+      "data": "2024-05-15",
+      "sklep": "Żabka",
+      "kategoria": "Piwo",
+      "wartość": "13"
+    },
+    {
+      "uuid": "c9f75b57-babd-475d-9bc7-a4c8734c0e12",
+      "data": "2024-05-16",
+      "sklep": "Żabka",
+      "kategoria": "Kawa",
+      "wartość": "6.80"
+    },
+    {
+      "uuid": "8bd71e92-17a0-45fd-84ff-179ba3008f67",
+      "data": "2024-05-17",
+      "sklep": "Mini",
+      "kategoria": "Piwo",
+      "wartość": "25"
+    },
+    {
+      "uuid": "44958181-8e15-44da-8475-d5daa1a0e197",
+      "data": "2024-05-17",
+      "sklep": "Carrefour",
+      "kategoria": "Kot",
+      "wartość": "13"
+    },
+    {
+      "uuid": "3e9be365-25c8-4630-9909-563ce4903d6d",
+      "data": "2024-05-17",
+      "sklep": "Auchan Bazar Biedronka",
+      "kategoria": "Jedzenie",
+      "wartość": "130"
+    },
+    {
+      "uuid": "6b8024df-5bed-414b-9f54-dd64ba2507a7",
+      "data": "2024-05-18",
+      "sklep": "Mini",
+      "kategoria": "Piwo",
+      "wartość": "18"
+    },
+    {
+      "uuid": "43291d06-7e3b-436d-b724-3e08a5077c15",
+      "data": "2024-05-18",
+      "sklep": "Żabka",
+      "kategoria": "Napoje",
+      "wartość": "12.00"
+    },
+    {
+      "uuid": "01ab32f6-27c3-4795-af24-07faa35ffa56",
+      "data": "2024-05-18",
+      "sklep": "Biedronka",
+      "kategoria": "Jedzenie Słodycze Warzywa",
+      "wartość": "50.00"
+    },
+    {
+      "uuid": "b2eb52e5-e271-4319-89e8-dd50f826ff39",
+      "data": "2024-05-19",
+      "sklep": "Mini",
+      "kategoria": "Kot",
+      "wartość": "4"
+    },
+    {
+      "uuid": "899de980-2f6a-4de6-a4de-7af6cd7db845",
+      "data": "2024-05-19",
+      "sklep": "Mini",
+      "kategoria": "Piwo",
+      "wartość": "32"
+    },
+    {
+      "uuid": "b560b57c-1025-4bf6-9ee2-d14ecca15c8b",
+      "data": "2024-05-20",
+      "sklep": "Żabka",
+      "kategoria": "Jedzenie",
+      "wartość": "20"
+    },
+    {
+      "uuid": "89a84e44-e1f5-49df-84e6-8d28b0055659",
+      "data": "2024-05-20",
+      "sklep": "Mini",
+      "kategoria": "Piwo",
+      "wartość": "40"
+    },
+    {
+      "uuid": "577a5d30-83b8-4ed4-9e35-da85bf8db291",
+      "data": "2024-05-20",
+      "sklep": "Warzywa Kuciński",
+      "kategoria": "Warzywa",
+      "wartość": "19.77"
+    },
+    {
+      "uuid": "935aa166-1b1b-4b3e-a7d6-a17027f7cde0",
+      "data": "2024-05-20",
+      "sklep": "Auchan",
+      "kategoria": "Kwiaty",
+      "wartość": "12"
+    }
+  ],
+  "grupy": [
+    {
+      "uuid": "39a4407f-e4d9-4a7a-b1ed-9c62b5053772",
+      "month": "May-2001",
+      "kategoria": "Chemia",
+      "kwota": "200",
+      "data": "2024-05-01"
+    },
+    {
+      "uuid": "0ed27a50-98ca-4dad-b92d-9ceb49ba8d88",
+      "month": "May-2001",
+      "kategoria": "Jedzenie",
+      "kwota": "1000",
+      "data": "2024-05-20"
+    },
+    {
+      "uuid": "0bd691b8-b0bc-4f88-989e-03a91e780a65",
+      "month": "May-2001",
+      "kategoria": "Płatności",
+      "kwota": "2000",
+      "data": "2024-05-20"
+    },
+    {
+      "uuid": "6f20e448-22b7-479d-bdea-fec41346d43f",
+      "month": "May-2001",
+      "kategoria": "Kot",
+      "kwota": "200",
+      "data": "2024-05-20"
+    },
+    {
+      "uuid": "03f7fc7a-4904-4fc3-bfc6-dd21a2383b16",
+      "month": "May-2001",
+      "kategoria": "Kawa",
+      "kwota": "50",
+      "data": "2024-05-20"
+    },
+    {
+      "uuid": "08305d70-2a64-4f45-9140-a4c49cb41a88",
+      "month": "May-2001",
+      "kategoria": "Kwiaty",
+      "kwota": "100",
+      "data": "2024-05-20"
+    },
+    {
+      "uuid": "cfad734a-12ff-437d-bd52-15e5a8df1fdd",
+      "month": "May-2001",
+      "kategoria": "Piwo",
+      "kwota": "400",
+      "data": "2024-05-20"
+    }
+  ]
+}

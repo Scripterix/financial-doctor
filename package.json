@@ -1,0 +1,35 @@
+{
+  "name": "financial-planner",
+  "version": "1.0.0",
+  "description": "Finance Doctor Planner Analyst",
+  "main": "serve.js",
+  "scripts": {
+    "test": "npm run dev",
+    "start": "node serve.js",
+    "dev": "nodemon serve.js -w public nodemon -e js,html,css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Scripterix/financial-doctor.git"
+  },
+  "keywords": [
+    "finance",
+    "planner",
+    "doctor",
+    "analytics"
+  ],
+  "author": "Scripterix",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Scripterix/financial-doctor/issues"
+  },
+  "homepage": "https://github.com/Scripterix/financial-doctor#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "moment": "^2.30.1",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
