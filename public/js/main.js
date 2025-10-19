@@ -15,25 +15,37 @@ btnSubmit.addEventListener('click', function (e) {
 
   const shop = shopInput.value.trim();
   const inputText = inputField.value.trim();
-  const inputPrice = inputCash.value.trim();
+  const rawPrice = inputCash.value.trim().replace(',', '.');
+  const parsedPrice = Number.parseFloat(rawPrice);
 
-  if (shop && inputText && inputPrice) {
-    const newZakupy = {
-      uuid: uuidv4(),
-      data: moment().format('YYYY-MM-DD'),
-      sklep: shop,
-      kategoria: inputText,
-      wartość: inputPrice
-    };
+  if (!shop || !inputText || Number.isNaN(parsedPrice) || parsedPrice < 0) {
+    console.warn('Nieprawidłowe dane formularza zakupu');
+    return;
+  }
 
-    fetch('/api/zakupy', {
+  const normalisedPrice = Math.round(parsedPrice * 100) / 100;
+
+  const newZakupy = {
+    sklep: shop,
+    kategoria: inputText,
+    'wartość': normalisedPrice
+  };
+
+  fetch('/api/zakupy', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(newZakupy),
     })
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          return response.json().then(error => {
+            throw new Error(error.message || 'Błąd zapisu zakupu.');
+          });
+        }
+        return response.json();
+      })
       .then(data => {
         console.log('Success:', data);
       })
@@ -41,10 +53,9 @@ btnSubmit.addEventListener('click', function (e) {
         console.error('Error:', error);
       });
 
-    shopInput.value = '';
-    inputField.value = '';
-    inputCash.value = '';
-  }
+  shopInput.value = '';
+  inputField.value = '';
+  inputCash.value = '';
 });
 
 
