@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
-const fs = require('fs').promises;
 const path = require('path');
 const port = 3000;
 
 const moment = require('moment');
 const { v4: uuidv4 } = require('uuid');
+const storage = require('./storage');
 
 app.listen(port, () => console.log(`Listening on port ${port}...`));
 
@@ -17,15 +17,24 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // API endpoint to get all zakupy
 app.get('/api/zakupy', async (req, res) => {
-  const data = JSON.parse(await fs.readFile(path.join(__dirname, 'zakupy.json'), 'utf-8'));
-  res.json(data.zakupy);
+  try {
+    const zakupy = await storage.getZakupy();
+    res.json(zakupy);
+  } catch (error) {
+    console.error('Failed to load zakupy:', error);
+    res.status(500).json({ error: 'Failed to load zakupy' });
+  }
 });
 
 // API endpoint to get all grupy
 app.get('/api/grupy', async (req, res) => {
-  const data = JSON.parse(await fs.readFile(path.join(__dirname, 'zakupy.json'), 'utf-8'));
-  res.json(data.grupy);
-
+  try {
+    const grupy = await storage.getGrupy();
+    res.json(grupy);
+  } catch (error) {
+    console.error('Failed to load grupy:', error);
+    res.status(500).json({ error: 'Failed to load grupy' });
+  }
 });
 
 // Route for the home page
@@ -40,10 +49,14 @@ app.post('/api/zakupy', async (req, res) => {
     uuid: uuidv4(),
     data: moment().format('YYYY-MM-DD')
   };
-  const data = JSON.parse(await fs.readFile(path.join(__dirname, 'zakupy.json'), 'utf-8'));
-  data.zakupy.push(newZakupy);
-  await fs.writeFile(path.join(__dirname, 'zakupy.json'), JSON.stringify(data), 'utf-8');
-  res.json(newZakupy);
+
+  try {
+    const savedZakupy = await storage.addZakupy(newZakupy);
+    res.status(201).json(savedZakupy);
+  } catch (error) {
+    console.error('Failed to save zakupy:', error);
+    res.status(500).json({ error: 'Failed to save zakupy' });
+  }
 });
 
 // API endpoint to post new grupy
@@ -53,8 +66,12 @@ app.post('/api/grupy', async (req, res) => {
     uuid: uuidv4(),
     data: moment().format('YYYY-MM-DD')
   };
-  const data = JSON.parse(await fs.readFile(path.join(__dirname, 'zakupy.json'), 'utf-8'));
-  data.grupy.push(newGrupy);
-  await fs.writeFile(path.join(__dirname, 'zakupy.json'), JSON.stringify(data), 'utf-8');
-  res.json(newGrupy);
+
+  try {
+    const savedGrupy = await storage.addGrupy(newGrupy);
+    res.status(201).json(savedGrupy);
+  } catch (error) {
+    console.error('Failed to save grupy:', error);
+    res.status(500).json({ error: 'Failed to save grupy' });
+  }
 });
