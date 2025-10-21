@@ -1,24 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Docs for Planner</title>
-  <link rel="icon" href="/img/favicon.ico">
+  <title>Dokumentacja • Finance Doctor</title>
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
   <link rel="stylesheet" href="./css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/ownstyle.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-
   <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-    <div class="container-fluid">
-      <a class="navbar-brand fw-semibold" href="index.html">Planer Finansowy</a>
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="./index.html">Finance Doctor</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -42,44 +37,151 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#" id="currentDate"></a>
+          </li>
         </ul>
         <form class="d-flex" role="search">
-          <input class="form-control bg-light me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-light" type="submit">Search</button>
+          <input class="form-control bg-light me-2" type="search" placeholder="Szukaj" aria-label="Search">
+          <button class="btn btn-light" type="submit">Szukaj</button>
         </form>
       </div>
     </div>
   </nav>
 
-  <div class="container shadow my-5 py-5 bg-body rounded">
-    <h1 class="display-6 text-center fw-bold"> Planer Finansowy</h1>
-    <p class="lead text-center">Strona dokumentacji oraz plan prac i postęp. </p>
-  </div>
-
-  <div class="container shadow p-3 my-3 bg-body rounded" id="sums-container">
-    <h2 class="display-6 fw-bold fs-5 text-center mt-2 mb-5">Lista prac Maj 2024</h2>
-    <ul class="text-center list-unstyled">
-      <li>Dodano Moment - działa SSide - jest dodany jako skrypt musi być przed innym</li>
-      <li>Dodano uuid v 4</li>
-      <li>Express.js wraz z tworzeniem API</li>
-      <li>Utowrzenie GET</li>
-      <li>Utowrzenie realizacji fetch z sumowaniem</li>
-      <li>Moment i uuid dodane do skryptów klienta</li>
-      <li>18.05.2024 Dodanie skryptu do tworzenia grup(kategori) plan mięsiąc</li>
-      <li>20.05.2024 Dodanie accordion i poprawa Ui</li>
-      <li>20.05.2024 Dodanie do Github oraz do Glitch kodu Planera Finansowego</li>
-    </ul>
-    <div class="d-flex justify-content-center">
-      <div class="btn btn-primary my-4 w-25 disabled" value="submit" id="btnSubmit">Submit</div>
+  <section class="bg-primary text-white py-5" style="background: linear-gradient(135deg, #7953c1 0%, #ddb3ff 100%);">
+    <div class="container-lg text-center">
+      <h1 class="display-4 fw-semibold mb-3">Dokumentacja projektu</h1>
+      <p class="lead mb-0">
+        Wszystko w jednym miejscu: status prac, roadmapa PR-ów, komendy startowe i prompty dla Codex.
+      </p>
+      <p class="lead mb-0">Szybki podgląd statusu prac, roadmapy oraz najważniejszych komend i promptów do dalszego
+        rozwijania aplikacji.</p>
+      <div class="d-flex justify-content-center gap-3 mt-4">
+        <a class="btn btn-light btn-lg px-4" href="#status">Status</a>
+        <a class="btn btn-outline-light btn-lg px-4" href="#roadmap">Roadmapa</a>
+        <a class="btn btn-outline-light btn-lg px-4" href="https://github.com/Scripterix/financial-doctor"
+          target="_blank" rel="noreferrer">Repozytorium</a>
+      </div>
     </div>
+  </section>
 
-  </div>
+  <main class="container-lg my-4">
+    <div class="row g-4">
+      <div class="col-12" id="status">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-body">
+            <h2 class="h4 mb-3">Status na dziś (21-10-2025)</h2>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><span class="badge bg-success me-2">✅</span>PR 1 – klient API (`http.js`), guardy DOM i
+                normalizacja kwot.</li>
+              <li class="mb-2"><span class="badge bg-success me-2">✅</span>PR 2–4 – redesign Home, KPI oraz statystyki
+                Chart.js z filtrami.</li>
+              <li class="mb-2"><span class="badge bg-success me-2">✅</span>PR 5 – FullCalendar (zapytania `?from&to`).
+              </li>
+              <li class="mb-2"><span class="badge bg-success me-2">✅</span>PR 6 – archiwum miesięcy (localStorage).</li>
+              <li class="mb-2"><span class="badge bg-success me-2">✅</span>PR 7 – sumy w tabelach, odświeżony UI, CTA w
+                hero i stopka.</li>
+              <li><span class="badge bg-secondary me-2">⏳</span>PR 8+ – upload rachunków, checklisty QA.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12" id="roadmap">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-body">
+            <h2 class="h5 mb-3">Roadmapa / PR plan</h2>
+            <ol class="mb-0 ps-3">
+              <li class="mb-2"><strong>PR 4</strong> – Statystyki Chart.js (koło + trend) <span
+                  class="text-success">✔</span></li>
+              <li class="mb-2"><strong>PR 5</strong> – Widok kalendarza (FullCalendar + `?from&to`) <span
+                  class="text-success">✔</span></li>
+              <li class="mb-2"><strong>PR 6</strong> – Archiwum miesięcy (soft-hide) <span class="text-success">✔</span>
+              </li>
+              <li class="mb-2"><strong>PR 7</strong> – Usprawnienia UI (CTA, sumy, stopka) <span
+                  class="text-success">✔</span></li>
+              <li><strong>PR 8</strong> – Upload rachunków / QA checklisty <span class="text-warning">⏳</span></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-body">
+            <h2 class="h5 mb-3">Jak uruchomić lokalnie</h2>
+            <ol class="mb-3 ps-3">
+              <li><code>npm install</code></li>
+              <li><code>npm run migrate</code> <span class="text-muted small">(jednorazowo – normalizuje kwoty w
+                  JSON)</span></li>
+              <li><code>npm start</code> i przejdź na <a href="http://localhost:3000/" target="_blank"
+                  rel="noreferrer">http://localhost:3000/</a></li>
+            </ol>
+            <p class="mb-0 text-muted small">Tryb deweloperski: <code>npm run dev</code> (nodemon). Live Server/Vite
+              współpracuje dzięki helperowi w <code>http.js</code> i nagłówkom CORS.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-body">
+            <h2 class="h5 mb-3">Prompty dla Codex (pełna ścieżka)</h2>
+            <ol class="mb-0 ps-3">
+              <li>Naprawa klienta API + guardy DOM (`fix(frontend): robust API client + DOM guards`).</li>
+              <li>Migracja do UTF-8 i liczb (`chore(data): enforce UTF-8; migrate zakupy/grupy amounts`).</li>
+              <li>Redesign Home (`feat(ui): Home hero + KPI cards + card tables`).</li>
+              <li>Statystyki Chart.js (`feat(stats): category pie + monthly trend with Chart.js`).</li>
+              <li>Kalendarz (`feat(calendar): FullCalendar view powered by /api/zakupy?from&to`).</li>
+              <li>Archiwum miesięcy (`feat(archive): month-level soft archive with localStorage`).</li>
+              <li>Sumy w tabelach + formularz (`feat(ui): table footers with total sum + centered form on groups page`).
+              </li>
+              <li>Przycisk archiwum (`fix(archive): toggle hide/show months archive button`).</li>
+            </ol>
+            <p class="text-muted small mb-0">Nowe inicjatywy (np. upload rachunków) dodawaj analogicznie jako kolejne
+              prompty.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-body">
+            <h2 class="h5 mb-3">Notatki operacyjne</h2>
+            <ul class="mb-3">
+              <li>Archiwizacja miesięcy – stan w `localStorage` (`fp-archive-months`, `fp-archive-toggle`).</li>
+              <li>Kwoty w JSON są liczbami (po `npm run migrate`) – front korzysta z helperów `finance-utils.js`.</li>
+              <li>Kalendarz i filtry korzystają z `/api/zakupy?from&to`; backend waliduje daty
+                <code>moment(..., true)</code>.
+              </li>
+              <li>`npm start` wypisuje w CLI bezpośredni link <code>http://localhost:3000</code>.</li>
+              <li>`moment.js` ładowany jest przed `date.js`, więc konsola pozostaje czysta.</li>
+            </ul>
+            <p class="text-muted small mb-0">Nowe propozycje lub zadania zapisujemy w README (roadmapa) albo zgłaszamy w
+              issue/PR.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-light border-top py-3 mt-5">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <span class="text-muted small">&copy; 2025 Finance Doctor</span>
+      <div class="d-flex gap-3">
+        <a class="text-muted small text-decoration-none" href="#" onclick="return false;">Regulamin</a>
+        <a class="text-muted small text-decoration-none" href="#" onclick="return false;">Polityka prywatności</a>
+      </div>
+    </div>
+  </footer>
+
   <script src="./js/moment.js"></script>
   <script src="./js/uuid.js"></script>
   <script src="./js/bootstrap.min.js"></script>
   <!--<script src="./js/bootstrap.bundle.js"></script>-->
-  <script src="./js/main.js"></script>
+  <script type="module" src="./js/main.js"></script>
+  <script src="./js/cookies.js"></script>
   <script src="./js/date.js"></script>
+
 </body>
 
 </html>
