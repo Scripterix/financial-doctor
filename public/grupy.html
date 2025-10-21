@@ -1,20 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="pl">
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="/img/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
   <link rel="stylesheet" href="./css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/ownstyle.css">
-  <title>Planner Finansowy </title>
+  <title>Finance Doctor • Grupy budżetowe</title>
 </head>
 
 <body>
+
   <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Planer Finansowy</a>
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="./index.html">Finance Doctor</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -31,6 +32,9 @@
             <a class="nav-link" href="./realizacja.html">Realizacja</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="./realizacja.html#archiwum">Archiwum</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="./statystyki.html">Statystyki</a>
           </li>
           <li class="nav-item">
@@ -38,60 +42,93 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#" id="currentDate"></a>
+          </li>
         </ul>
         <form class="d-flex" role="search">
-          <input class="form-control bg-light me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-light" type="submit">Search</button>
+          <input class="form-control bg-light me-2" type="search" placeholder="Szukaj" aria-label="Search">
+          <button class="btn btn-light" type="submit">Szukaj</button>
         </form>
       </div>
     </div>
   </nav>
 
-  <div class="my-2 container shadow my-5 py-5 bg-body rounded">
-    <h1 class="display-6 text-center fw-bold">Planer Finansowy</h1>
-    <p class="lead text-center">Plan Finansowy grupy wydatków, przychodów, planowanie miesięcznych wydatków</p>
-  </div>
+  <section class="bg-primary bg-gradient text-white py-5"
+    style="background: linear-gradient(135deg, #5fb2ff 0%, #add8ff 100%);">
+    <div class="container-lg text-center">
+      <h1 class="display-4 fw-semibold mb-3">Zarządzanie grupami budżetowymi</h1>
+      <p class="lead mb-0">
+        Ustalaj limity dla kategorii wydatków i zapisuj planowane kwoty, aby później porównać je z realizacją.
+      </p>
+      <div class="d-flex justify-content-center gap-3 mt-4">
+        <a class="btn btn-light btn-lg px-4" href="#form-grupy">Dodaj limit</a>
+        <a class="btn btn-outline-light btn-lg px-4" href="./realizacja.html">Zobacz realizację</a>
+      </div>
+    </div>
+  </section>
 
-  <div class="container shadow p-3 my-5 bg-body rounded">
-    <h2 class="display-6 fw-bold fs-5 text-center mt-2 mb-5">Grupy wydatków na Maj</h2>
-    <form id="form-grupy">
-      <div class="form-group row my-4">
-        <div class="col-md-3">
-          <label for="monthInput">Miesiąc wpisz np 01.05.2024</label>
-          <input type="date" class="form-control" id="monthInput" placeholder="Wprowadź np Maj-2024">
-        </div>
-        <div class="col-md-3">
-          <label for="kategoriaInput">Kategoria</label>
-          <input type="text" class="form-control" id="kategoriaInput" placeholder="Wprowadź Kategorię">
-        </div>
-        <div class="col-md-3">
-          <label for="kwotaInput">Kwota</label>
-          <input type="number" class="form-control" id="kwotaInput" placeholder="Wprowadź Kwotę">
-        </div>
-        <div class="col-md-3">
-          <button type="submit" class="btn btn-primary my-4 w-100" id="btnSubmitGrupy">Submit</button>
-        </div>
-    </form>
-  </div>
-  </div>
+  <section class="container-lg my-4">
+    <div class="card shadow-sm border-0">
+      <div class="card-header bg-white border-0">
+        <h2 class="h5 mb-0">Dodaj lub zaktualizuj limit kategorii</h2>
+      </div>
+      <div class="card-body">
+        <form id="form-grupy">
+          <div class="row g-3 justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <label class="form-label" for="monthInput">Miesiąc (np. 2024-05-01)</label>
+                  <input type="date" class="form-control" id="monthInput" aria-describedby="monthHelp">
+                  <div class="form-text" id="monthHelp">Wybierz dowolny dzień miesiąca – w systemie zostanie zapisany
+                    skrót
+                    w formacie „Maj-2024".</div>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label" for="kategoriaInput">Kategoria</label>
+                  <input type="text" class="form-control" id="kategoriaInput" placeholder="np. Jedzenie">
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label" for="kwotaInput">Kwota planu (PLN)</label>
+                  <input type="number" step="0.01" min="0" class="form-control" id="kwotaInput" placeholder="np. 750">
+                </div>
+                <div class="col-12 text-end">
+                  <button type="submit" class="btn btn-primary" id="btnSubmitGrupy">Zapisz limit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
 
+  <section class="container-lg my-4">
+    <div class="card shadow-sm border-0">
+      <div class="card-header bg-white border-0 d-flex justify-content-between align-items-center">
+        <h2 class="h5 mb-0">Aktualne limity (ostatnie wpisy)</h2>
+        <span class="text-muted small">Dane z pliku <code>zakupy.json</code></span>
+      </div>
+      <div class="card-body" id="displayKategorie">
+        <p class="text-muted mb-0">Ładowanie danych...</p>
+      </div>
+    </div>
+  </section>
 
-  <div class="container container shadow my-5 py-5 bg-body rounded" id="displayKategorie">
-    Kategorie
-  </div>
+  <footer class="bg-light border-top py-3 mt-5">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <span class="text-muted small">&copy; 2025 Finance Doctor</span>
+      <div class="d-flex gap-3">
+        <a class="text-muted small text-decoration-none" href="#" onclick="return false;">Regulamin</a>
+        <a class="text-muted small text-decoration-none" href="#" onclick="return false;">Polityka prywatności</a>
+      </div>
+    </div>
+  </footer>
 
-  <div class="container container shadow my-5 py-5 bg-body rounded">
-    <p>Jedzenie, Napoje, Płatności, Piwo, Kot, Ubrania, Obuwie, Dom, Rozrywka, Inwestycje, Oszczędności, Mandaty, Kawa
-    </p>
-  </div>
-
-
-  <script src="./js/grupy.js"></script>
   <script src="./js/moment.js"></script>
-  <script src="./js/uuid.js"></script>
   <script src="./js/bootstrap.min.js"></script>
   <script src="./js/bootstrap.bundle.js"></script>
   <script src="./js/date.js"></script>
+  <script type="module" src="./js/grupy.js"></script>
 </body>
 
 </html>

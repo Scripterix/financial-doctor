@@ -6,7 +6,8 @@
   "scripts": {
     "test": "npm run dev",
     "start": "node serve.js",
-    "dev": "nodemon serve.js -w public nodemon -e js,html,css"
+    "dev": "nodemon serve.js -w public nodemon -e js,html,css",
+    "migrate": "node scripts/migrate-numbers.js"
   },
   "repository": {
     "type": "git",

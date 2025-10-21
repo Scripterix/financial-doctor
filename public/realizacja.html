@@ -1,21 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="pl">
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="/img/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
   <link rel="stylesheet" href="./css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/ownstyle.css">
-  <title>Planer Finansowy / Realizacja</title>
+  <title>Finance Doctor • Realizacja wydatków</title>
 </head>
 
 <body>
 
   <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Planer Finansowy</a>
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="./index.html">Finance Doctor</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -31,43 +31,84 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="./realizacja.html">Realizacja</a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="./statystyki.html">Statystyki</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./docs.html">Docsy</a>
+            <a class="nav-link" href="./docs.html">Docs</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#" id="currentDate"></a>
+          </li>
         </ul>
         <form class="d-flex" role="search">
-          <input class="form-control bg-light me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-light" type="submit">Search</button>
+          <input class="form-control bg-light me-2" type="search" placeholder="Szukaj" aria-label="Search">
+          <button class="btn btn-light" type="submit">Szukaj</button>
         </form>
       </div>
     </div>
   </nav>
 
-  <div class="my-2 container shadow my-5 py-5 bg-body rounded">
-    <h1 class="display-6 text-center fw-bold">Planer Finansowy</h1>
-    <p class="lead text-center">Planer Finansowy strona realizacja wydatków sumy na poszczególnych grupach</p>
-  </div>
+  <section class="bg-primary bg-gradient text-white py-5"
+    style="background: linear-gradient(135deg, #5fb2ff 0%, #add8ff 100%);">
+    <div class="container-lg text-center">
+      <h1 class="display-4 fw-semibold mb-3">Realizacja wydatków</h1>
+      <p class="lead mb-0">
+        Sprawdzaj, ile wydano w każdej kategorii, ukrywaj stare miesiące w archiwum i szybko porównuj plan z wykonaniem.
+      </p>
+      <div class="d-flex justify-content-center gap-3 mt-4">
+        <a class="btn btn-light btn-lg px-4" href="#archiwum">Przejdź do zestawień</a>
+        <a class="btn btn-outline-light btn-lg px-4" href="./statystyki.html">Analizuj statystyki</a>
+      </div>
+    </div>
+  </section>
 
-  <div class="container shadow p-3 my-3 bg-body rounded" id="sums-container">
-    <h2 class="display-6 fw-bold fs-5 text-center mt-2 mb-5">Wydatki Maj 2024</h2>
-  </div>
+  <section class="container-lg my-4" id="archiwum">
+    <div id="archiveSection" class="collapse show">
+      <div class="card shadow-sm border-0">
+        <div class="card-body">
+          <div class="d-flex flex-column flex-lg-row justify-content-lg-between gap-3 align-items-lg-center">
+            <div>
+              <h2 class="h4 mb-1">Zestawienie miesięczne</h2>
+              <p class="text-muted mb-0 small">Każdy miesiąc możesz oznaczyć jako archiwalny — wróci jednym kliknięciem.
+              </p>
+            </div>
+            <button class="btn btn-outline-primary btn-sm" id="toggleArchiveBtn" type="button">
+              Pokaż archiwum
+            </button>
+          </div>
 
+          <hr class="my-4">
 
+          <div>
+            <h3 class="h6 text-uppercase text-muted mb-2">Miesiące</h3>
+            <div class="d-flex flex-wrap gap-2" id="monthPills"></div>
+          </div>
 
+          <div class="mt-4" id="tablesContainer">
+            <p class="text-muted mb-0">Ładowanie danych...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-
+  <footer class="bg-light border-top py-3 mt-5">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <span class="text-muted small">&copy; 2025 Finance Doctor</span>
+      <div class="d-flex gap-3">
+        <a class="text-muted small text-decoration-none" href="#" onclick="return false;">Regulamin</a>
+        <a class="text-muted small text-decoration-none" href="#" onclick="return false;">Polityka prywatności</a>
+      </div>
+    </div>
+  </footer>
 
   <script src="./js/moment.js"></script>
-  <script src="./js/uuid.js"></script>
   <script src="./js/bootstrap.min.js"></script>
   <script src="./js/bootstrap.bundle.js"></script>
-  <script src="./js/suma-kategoria.js"></script>
   <script src="./js/date.js"></script>
+  <script type="module" src="./js/suma-kategoria.js"></script>
 </body>
 
 </html>
